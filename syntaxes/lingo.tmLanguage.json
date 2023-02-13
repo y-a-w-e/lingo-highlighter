@@ -1,0 +1,145 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Lingo",
+	"patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#functions"
+        },
+        {
+            "include": "#conditions"
+        },
+        {
+            "include": "#integers"
+        },
+        {
+            "include": "#variables"
+        },
+        {
+            "include": "#booleans"
+        },
+        {
+            "include": "#attributes"
+        }
+	],
+	"repository": {
+		"keywords": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(?:on|end|repeat)\\b",
+                    "name": "keyword.control.lingo"
+                },
+                {
+                    "match": "(?i)\\b(?:global|property|local)\\b",
+                    "name": "storage.modifier.lingo"
+                },
+                {
+                    "match": "(?i)\\b(?:new)\\b",
+                    "name": "keyword.operator.new.lingo"
+                },
+                {
+                    "match": "(?i)\\b(?:set|put)\\b",
+                    "name": "keyword.other.lingo"
+                }
+            ]
+		},
+        "variables":{
+            "patterns": [
+                {
+                    "match": "(?i)\\bset|put\\b\\s+[a-zA-Z][a-zA-Z0-9_]*\\s*=",
+                    "name": "variable.other.lingo"
+                }
+            ]
+        },
+        "conditions":{
+            "patterns": [
+                {
+                    "match": "(?i)\\b(?:if|then|elseif|else|end if)\\b|<=|>=|<|>|=|\\band\\b|\\bor\\b",
+                    "name": "keyword.control.conditional.lingo"
+                }
+            ]
+        },
+        "integers":{
+            "patterns": [
+                {
+                    "match": "\\b(?:[0-9]+)\\b",
+                    "name": "constant.numeric.integer.lingo"
+                }
+            ]
+        },
+		"strings": {
+			"name": "string.quoted.double.lingo",
+			"begin": "\"",
+			"end": "\"",
+            "patterns": [
+                {
+                    "match": "\"(?:[^\\\\\"]|\\\\.)*\"",
+                    "name": "string.quoted.double.lingo"
+                }
+            ]
+		},
+		"comments": {
+            "patterns": [
+                {
+                    "match": "--.*$",
+                    "name": "comment.line.rem.lingo"
+                }
+            ]
+        },
+        "functions": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(?:exitFrame|mouseDown|mouseLeave|mouseEnter|mouseUp|keyUp|keyDown)\\b",
+                    "name": "support.function.lingo"
+                },
+                {
+                    "match": "(?i)\\b(?:member|handler)\\b",
+                    "name": "support.function.lingo"
+                },
+                {
+                    "match": "(?i)\\b(?:sprite)\\b",
+                    "name": "support.type.lingo"
+                }
+            ]
+        },
+        "booleans": {
+            "patterns": [
+                {
+                    "match": "(?i)\\b(TRUE|FALSE)\\b",
+                    "name": "constant.language.boolean.lingo"
+                }
+            ]
+        },
+        "attributes": {
+            "patterns": [
+                {
+                    "match": "\\.[a-zA-Z_][a-zA-Z0-9_]*",
+                    "name": "support.property.lingo"
+                }
+            ]
+        }
+	},
+	"settings": [
+		{
+			"scope": "keyword.control.lingo",
+			"settings": {
+				"foreground": "#00FF00"
+			}
+		},
+        {
+            "scope":"support.function.lingo",
+            "settings": {
+				"foreground": "#ff0000"
+			}
+        }
+	],
+	"scopeName": "source.lng"
+}
