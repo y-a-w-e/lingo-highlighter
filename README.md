@@ -1,5 +1,12 @@
-# lingo-highlighter
-A Syntax Highlighter for the Coding Language Lingo and Visual Studio Code
+# Lingo Syntax Highlighting for Visual Studio Code
+
+This extension provides syntax highlighting for the Lingo scripting language in Visual Studio Code. Lingo was used for developing interactive multimedia content, such as games and simulations, using Adobe Director. This extension aims to improve the readability of Lingo code and make it easier to develop and read programs written in Lingo. It was developed during a research project that involved the examination of old net.art programs developed with Adobe Director and the programming language Lingo.
+
+# Usage
+
+* Open a .lng file in Visual Studio Code
+* The syntax highlighting should automatically be applied
+
 
 # install
 
